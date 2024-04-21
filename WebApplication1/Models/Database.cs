@@ -13,7 +13,7 @@ namespace WebApplication1.Models
         private string username = "root";
         private string password = "Ar100308";
         private MySqlConnection? Connection { get; set; }
-        public MySqlConnection getConnection()
+        public MySqlConnection getConnection() //установка соединения с базой данных
         {
                 String connString = "Server=" + host + ";Database=" + database + ";port=" + port + ";User Id=" + username + ";password=" + password;
                 Connection = new MySqlConnection(connString);
