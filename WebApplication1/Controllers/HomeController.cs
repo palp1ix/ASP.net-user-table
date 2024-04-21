@@ -32,13 +32,10 @@ namespace WebApplication1.Controllers
             List<List<string>> table = new List<List<string>>();
             foreach (DataTable dt in Users.Tables)
             {
-                // перебор всех столбцов
                 foreach (DataColumn column in dt.Columns)
                     columns.Add(column.ColumnName);
-                // перебор всех строк таблицы
                 foreach (DataRow row in dt.Rows)
                 {
-                    // получаем все €чейки строки
                     var cells = row.ItemArray;
                     foreach (object? cell in cells)
                         rows.Add(cell.ToString());
