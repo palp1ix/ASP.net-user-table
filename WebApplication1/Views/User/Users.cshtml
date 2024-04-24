@@ -1,0 +1,29 @@
+﻿@model List<List<string>>
+@{
+    ViewData["Title"] = "Table of users";
+}
+
+<div class="container">
+    <table class="table table-bordered border-primary table-dark">
+        <thead>
+        <tr>
+            @{
+                foreach (var column in Model[0])
+                {
+                    <th scope="col">@column</th>
+                }
+            }
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            @{
+                foreach (var row in Model[1])
+                {
+                    <td>@row</td>
+                }
+            }
+        </tr>
+        </tbody>
+</table>
+</div>
