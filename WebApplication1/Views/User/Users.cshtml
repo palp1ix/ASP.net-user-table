@@ -16,14 +16,24 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
             @{
-                foreach (var row in Model[1])
-                {
-                    <td>@row</td>
+                for (int i = 0; i < Model[1].Count / Model[0].Count; i++)
+                { 
+                    int k = 1;
+                    <tr>
+                        @{
+                            for (int j = i * 2 + i; j < Model[1].Count; j++)
+                            {
+                                var row = Model[1][j];
+                                <td>@row</td>
+                                if (k == 3)
+                                    break;
+                                k++;
+                            }
+                        }
+                    </tr>
                 }
             }
-        </tr>
         </tbody>
 </table>
 </div>

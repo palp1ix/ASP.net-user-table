@@ -4,11 +4,11 @@ using System.Data;
 
 namespace WebApplication1.Controllers;
 
-public class UsersController : Controller
+public class UserController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<UserController> _logger;
     
-    public UsersController(ILogger<HomeController> logger)
+    public UserController(ILogger<UserController> logger)
     {
         _logger = logger;
     }
@@ -33,5 +33,11 @@ public class UsersController : Controller
         table.Add(columns);
         table.Add(rows);
         return View(table);
+    }
+    
+    public IActionResult Login(string username, string password)
+    {
+        new User().CreateUser(username, password);
+        return RedirectToAction("Users");
     }
 }

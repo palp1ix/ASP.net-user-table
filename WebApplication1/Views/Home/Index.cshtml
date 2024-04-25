@@ -1,19 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Users";
 }
 
 <div class="container">
     <h1>Authorization window</h1>
-    <form method="POST" action="Home/">
-        <div>
-            <label for="username">Type username  </label>
-            <input type="text" name="username" required/>
-        </div>
-        <div>
-            <label for="password">Type password  </label>
-            <input type="password" name="username" required/>
-        </div>
-        <input type="submit"/>
+    <form method="post"  asp-controller="User" asp-action="Login">
+        <label>Type username</label>
+        <input type="text" name="username" required/>
+        <label>Type password</label>
+        <input type="password" name="password" required/>
+        <input type="submit" value="Submit"/>
     </form>
 </div>
 
